@@ -1,38 +1,4 @@
 public class FamilyCensus {
-
-    public static class Human {
-        private String name;
-        private boolean gender; // true = male, false = female
-        private int age;
-        private Human father;
-        private Human mother;
-
-        // Конструктор без отца и матери
-        public Human(String name, boolean gender, int age) {
-            this.name = name;
-            this.gender = gender;
-            this.age = age;
-        }
-
-        // Конструктор с отцом и матерью
-        public Human(String name, boolean gender, int age, Human father, Human mother) {
-            this.name = name;
-            this.gender = gender;
-            this.age = age;
-            this.father = father;
-            this.mother = mother;
-        }
-
-        // Переопределение метода toString для удобного вывода информации
-        @Override
-        public String toString() {
-            String genderStr = gender ? "мужской" : "женский";
-            String fatherStr = (father != null) ? father.name : "неизвестен";
-            String motherStr = (mother != null) ? mother.name : "неизвестна";
-            return "Имя: " + name + ", пол: " + genderStr + ", возраст: " + age + ", отец: " + fatherStr + ", мать: " + motherStr;
-        }
-    }
-
     public static void main(String[] args) {
         // Создаем дедушек и бабушек
         Human grandFather1 = new Human("Иван", true, 78);
