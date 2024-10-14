@@ -2,23 +2,22 @@ import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
-        int num1 = getInt();
-        int num2 = getInt();
-        char operation = getOperation();
+        Scanner scanner = new Scanner(System.in);  // Сканнер создан в main и передается в методы
+        int num1 = getInt(scanner);
+        int num2 = getInt(scanner);
+        char operation = getOperation(scanner);
         int result = calc(num1, num2, operation);
         System.out.println("Результат: " + result);
     }
 
     // Метод для ввода числа
-    public static int getInt() {
-        Scanner scanner = new Scanner(System.in);
+    public static int getInt(Scanner scanner) {  // Передаем сканнер в метод
         System.out.print("Введите число: ");
         return scanner.nextInt();
     }
 
     // Метод для ввода операции
-    public static char getOperation() {
-        Scanner scanner = new Scanner(System.in);
+    public static char getOperation(Scanner scanner) {  // Передаем сканнер в метод
         System.out.print("Введите операцию (+, -, *, /): ");
         return scanner.next().charAt(0);
     }
